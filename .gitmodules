@@ -1,0 +1,3 @@
+[submodule "lib/dbo"]
+	path = lib/dbo
+	url = https://github.com/mightydonbriggs/dbo.git
