@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>War Tech Test</title>
+        <link type="text/css" rel="stylesheet" href="css/war.css" />
+    </head>
+<body>
+    <div id='container'>
+        <div id='header'>
+            <h1 class='title'>War Tech Test</h1>
+        </div>
+        <div id='navbar'>
+            <?php 
+            require($_SESSION['includePath'] .DIRECTORY_SEPARATOR .'nav.phtml'); ?> 
+        </div>
+        <div id='content'>
+            <?php echo $this->content; ?>
+        </div>
+    </div>
+    <pre>
+<?php 
+    print_r($_SESSION);
+?>    
+    </pre>
+</body>    
+</html>

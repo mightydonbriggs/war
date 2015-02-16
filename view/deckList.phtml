@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>War Tech Test: Deck List</title>
+        <link type="text/css" rel="stylesheet" href="css/war.css" />
+    </head>
+<body>
+    <div id='container'>
+        <div id='header'>
+            <h1 class='title'>War Tech Test: Deck List</h1>
+        </div>
+        <div id='navbar'>
+            <?php 
+            require($_SESSION['includePath'] .DIRECTORY_SEPARATOR .'nav.phtml'); ?> 
+        </div>
+        <div id='content'>
+            <?php $this->content->render() ?>
+        </div>
+    </div>    
+</body>    
+</html>
