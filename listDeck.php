@@ -1,10 +1,15 @@
 <?php
     require_once("./dboinit.php");
-    $deck = new \war\Deck();
-    $deck->initialize();
     $db = $_SESSION['db'];  //Get a database object from the session
+    $deck = new \war\Deck();
     
-    $result = $deck->getAll();
+    if($deck->countCards() != 52) {
+        print "Initializing Deck <br />";
+        $deck->initialize();    
+    }
+    
+    $sql = 'select * from deck order by sortlocation';
+    $result = $deck->getBySql($sql);
     $rows = $db->fetch_array_set($result);
     
     $decklist = new DBO\Tableizer($rows);
@@ -13,11 +18,7 @@
     $view->setTemplate('deckList.phtml')
             ->setContent($decklist)
             ->render();    
-    
-//print "<pre>\n";
-//print_r($result);
-//print "</pre>\n";
-//die("DEATH!!\n");    
+
     
     
 
